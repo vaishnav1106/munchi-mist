@@ -1,0 +1,203 @@
+[
+    {
+        "id":1,
+        "name":"Margherita Pizza",
+        "category":"pizza",
+        "price":199,
+        "image":"img/margherita-p.jpg"
+    },
+
+    {
+        "id":2,
+        "name":"Double Patty Meat Burger",
+        "category":"burger",
+        "price":249,
+        "image":"img/doublemeat-b.jpg"
+    },
+
+    {
+        "id":3,
+        "name":"Veg Pizza",
+        "category":"pizza",
+        "price":249,
+        "image":"img/veg-p.jpg"
+    },
+
+    {
+        "id":4,
+        "name":"Pazham Pori",
+        "category":"kerala",
+        "price":20,
+        "image":"img/.jpg"
+    },
+
+    {
+        "id":5,
+        "name":"Spicy Chicken Burger",
+        "category":"burger",
+        "price":219,
+        "image":"img/.png"
+    },
+
+    {
+        "id":6,
+        "name":"Sprite 200ml",
+        "category":"drink",
+        "price":20,
+        "image":"img/sprite.png"
+    },
+
+    {
+        "id":7,
+        "name":"Tea",
+        "category":"drink",
+        "price":15,
+        "image":"img/tea.png"
+    },
+
+    {
+        "id":8,
+        "name":"Veg Burger",
+        "category":"burger",
+        "price":179,
+        "image":"img/veg-b.jpg"
+    },
+
+    {
+        "id":9,
+        "name":"Pepperoni Pizza",
+        "category":"pizza",
+        "price":299,
+        "image":"img/pepperoni-p.jpg"
+    },
+
+    {
+        "id":10,
+        "name":"MahaRaja Burger",
+        "category":"burger",
+        "price":199,
+        "image":"img/maharaja-b.jpg"
+    },
+
+    {
+        "id":11,
+        "name":"Cheese Burst Burger",
+        "category":"burger",
+        "price":229,
+        "image":"img/.jpg"
+    },
+
+    {
+        "id":12,
+        "name":"Coffee",
+        "category":"drink",
+        "price":25,
+        "image":"img/coffee.jpg"
+    },
+
+
+    {
+        "id":13,
+        "name":"Soda Lime",
+        "category":"drink",
+        "price":20,
+        "image":"img/sodalime.png"
+    },
+
+    {
+        "id":14,
+        "name":"Smash Burger",
+        "category":"burger",
+        "price":249,
+        "image":"img/smashburger.png"
+    },
+
+    {
+        "id":15,
+        "name":"Double Cheese Pizza",
+        "category":"pizza",
+        "price":189,
+        "image":"img/double-chess.jpg"
+    },
+
+    {
+        "id":16,
+        "name":"BBQ Chicken Pizza",
+        "category":"pizza",
+        "price":259,
+        "image":"img/.jpg"
+    },
+
+    {
+        "id":17,
+        "name":"Farmhouse Pizza",
+        "category":"pizza",
+        "price":259,
+        "image":"img/munchi mist.png"
+    },
+
+    {
+        "id":18,
+        "name":"Samosa",
+        "category":"kerala",
+        "price":30,
+        "image":"img/.jpg"
+    },
+
+    {
+        "id":19,
+         "name":"Chicken Burger",
+        "category":"burger",
+        "price":199,
+        "image":"img/chicken-b.jpg"
+    },
+
+    {
+        "id":20,
+        "name":"Unniappam",
+        "category":"kerala",
+        "price":20,
+        "image":"img/.jpj"
+    },
+
+    {
+        "id":21,
+        "name":"Chicken Pizza",
+        "category":"pizza",
+        "price":189,
+        "image":"img/chicken-p.jpg"
+    },
+
+    {
+        "id":22,
+        "name":"CocaCola 200ml",
+        "category":"drink",
+        "price":20,
+        "image":"img/cocacola.png"
+    },
+
+    {
+        "id":23,
+        "name":"Chicken Cutlet",
+        "category":"kerala",
+        "price":30,
+        "image":"img/.jpg"
+    },
+
+    {
+        "id":24,
+        "name":"Fresh Lime Juice",
+        "category":"drink",
+        "price":25,
+        "image":"img/.jpg"
+    },
+
+    {
+        "id":25,
+        "name":"Mango Shake",
+        "category":"drink",
+        "price":60,
+        "image":"img/.jpg"
+    }
+]
+

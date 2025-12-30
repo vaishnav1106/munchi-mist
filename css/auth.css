@@ -1,0 +1,121 @@
+/* ---------- RESET ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* ---------- BODY ---------- */
+body {
+  min-height: 100vh;
+  background-color: #111;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+/* ---------- CONTAINER ---------- */
+.auth-container {
+  background-color: #FFC400;
+  color: #111;
+  width: 100%;
+  max-width: 420px;
+  padding: 40px 20px;
+  border-radius: 16px;
+}
+
+/* ---------- BRAND ---------- */
+.brand {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.brand img {
+  height: 70px;
+  margin-bottom: 10px;
+}
+
+.brand h1 {
+  font-size: 1.8rem;
+  margin-bottom: 6px;
+}
+
+.brand p {
+  font-size: 0.95rem;
+}
+
+/* ---------- FORM ---------- */
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.auth-form input {
+  padding: 14px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+}
+
+/* ---------- BUTTON ---------- */
+.btn-primary {
+  background-color: #E53935;
+  color: #fff;
+  border: none;
+  padding: 14px;
+  border-radius: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.btn-primary:hover {
+  background-color: #c62828;
+}
+
+/* ---------- SWITCH ---------- */
+.switch {
+  margin-top: 15px;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.switch a {
+  color:#FFC400 ;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+/* =====================================================
+   📲 TABLET (481px – 1024px)
+===================================================== */
+@media (min-width: 481px) {
+  .auth-container {
+    padding: 50px 30px;
+  }
+
+  .brand h1 {
+    font-size: 2rem;
+  }
+}
+
+/* =====================================================
+   💻 DESKTOP (1025px+)
+===================================================== */
+@media (min-width: 1025px) {
+  body {
+    background: linear-gradient(120deg, #111 50%, #FFC400 50%);
+  }
+
+  .auth-container {
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+  }
+
+  .switch a{
+    color:#111;
+  }
+}

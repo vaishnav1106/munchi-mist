@@ -1,0 +1,167 @@
+/* ---------- RESET ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* ---------- GLOBAL ---------- */
+body {
+  background-color: #111;
+  color: #fff;
+  line-height: 1.6;
+}
+
+/* ---------- NAVBAR ---------- */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  background-color: #FFC400;
+}
+
+.logo {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #111;
+}
+
+.logo img{
+    width:80px;
+    height:80px;
+}
+
+.btn-outline {
+  border: 2px solid #111;
+  padding: 8px 18px;
+  border-radius: 25px;
+  text-decoration: none;
+  color: #111;
+  font-weight: bold;
+}
+
+/* ---------- HERO ---------- */
+
+.hero {
+    background-color: #ffc400;
+    color:#111;
+    padding:40px 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.hero-content{
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hero h1{
+    font-size:2.2rem;
+    margin-bottom:15px;
+    text-align: center;
+}
+
+.hero p {
+    font-size: 1rem;
+    margin-bottom:25px;
+    text-align: center;
+}
+
+/* -----Button----- */
+
+.btn-primary{
+     background-color:#e53935;
+     color:#fff;
+     padding:14px 28px;
+     border-radius: 30px;
+     text-decoration: none;
+     font-weight: bold;
+     display: inline-block;
+}
+
+
+/* ---------FEATURES-------- */
+.features{
+    padding: 60px 20px;
+    display: flex;
+    flex-direction: column;
+    gap:30px;
+}
+
+.feature{
+    background-color:#1c1c1c ;
+    padding:25px;
+    border-radius:12px;
+}
+
+.feature h3{
+    color: #ffc400;
+    margin-bottom:8px;
+}
+
+/* ---------- CTA ---------- */
+
+.cta{
+    background-color: #325534;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.cta h2{
+    margin-bottom: 20px;
+}
+
+
+/* TABLET(481px - 1024px) */
+@media(min-width:481px){
+    .hero h1 {
+        font-size:2.8rem;
+    }
+
+    .features {
+        flex-direction:row;
+        justify-content: center;
+    }
+
+    .feature{
+        max-width:250px;
+    }
+}
+
+/* DESKTOP (1025px+) */
+
+@media(min-width:1025px){
+    .navbar,
+    .hero,
+    .features,
+    .cta{
+        padding-left: 80px;
+        padding-right: 80px;
+    }
+    
+    .hero{
+        min-height:80vh;
+        display: flex;
+        align-items: center;
+    }
+    
+    .hero-content{
+        max-width: 600px;
+    }
+
+    .hero h1{
+        font-size :3.5rem
+    }
+
+    .logo img{
+        max-width: 120px;
+        max-height: 120px;
+        width:100%;
+        height:100%;
+    }
+
+}
