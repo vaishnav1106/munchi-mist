@@ -49,3 +49,59 @@ renderCart();
 
 // bill
 
+const placeOrderBtn = document.getElementById("placeOrderBtn")
+const billModal = document.getElementById("billModal")
+
+placeOrderBtn.addEventListener("click", () =>{
+  openBill(6); //example:6km distance
+})
+
+function openBill(distanceKm){
+  const billItems = document.getElementById("billItems")
+  billItems.innerHTML = "";
+
+  let subtotal = 0;
+
+  cart.forEach(item =>{
+    subtotal +=item.price * item.quantity
+    billItems.innerHTML +=`<p>${item.name} x ${item.quantity}</p>`
+  })
+
+  const tax = Math.round(subtotal *0.09)
+
+  let delivery = 0
+  if(distanceKm > 5){
+    delivery = (distanceKm-5) *15
+  }
+
+  const total = subtotal +tax+ delivery
+  
+  document.getElementById("billSubtotal").textContent =subtotal
+  document.getElementById("billTax").textContent = tax
+  document.getElementById("billDelivery").textContent = delivery
+  document.getElementById("billTotal").textContent = total
+
+  billModal.style.display = "flex"
+
+}
+
+document.getElementById("closeBill").onclick = () => {
+  billModal.style.display = "none"
+}
+
+// whatsapp send message
+
+document.getElementById("whatsappBtn").onclick = () => {
+  const ownerNumber = "917592819736"; // OWNER NUMBER
+  let message = "New Order from Munchi Mist:%0A";
+
+  cart.forEach(item => {
+    message += `${item.name} × ${item.quantity}%0A`;
+  });
+
+  window.open(
+    `https://wa.me/${ownerNumber}?text=${message}`,
+    "_blank"
+  );
+};
+
