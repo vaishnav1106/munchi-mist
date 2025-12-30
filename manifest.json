@@ -1,0 +1,22 @@
+{
+    "name":"Munchi Mist",
+    "short_name":"MunchiMist",
+    "start_url":"index.html",
+    "display":"standalone",
+    "background_color":"#ffffff",
+    "theme_color":"#000000",
+    "orientation":"pointer",
+    "icons": [
+    {
+      "src": "img/munchi mist.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "img/munchi mist.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+
+}

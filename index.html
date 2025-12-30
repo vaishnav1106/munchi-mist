@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Munchi Mist | Food Ordering App</title>
     <link rel="icon" type="image/png" href="img/munchi mist.png">
+
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#000000">
+
     <!-- Main CSS -->
     <link rel="stylesheet" href="css/style.css">
 </head>
@@ -49,8 +53,18 @@
     <section class="cta">
         <h2>Hungry Already?</h2>
         <a href="registration.html" class="btn-primary">Register & Order</a>
-    </section> 
+    </section>
+
+    <script>
+        if ("serviceWorker" in navigator) {
+            navigator.serviceWorker
+                .register("service-worker.js")
+                .then(() => console.log("Service Worker Registered"));
+        }
+    </script>
+
 </body>
+
 </html>
 
 <!--  -->
