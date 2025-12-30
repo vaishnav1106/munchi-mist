@@ -30,7 +30,7 @@ function displayProducts(category) {
       </div>
 
       <div class="product-action">
-        <img src="${product.image}" alt="${product.name}">
+        <img src="${product.image}" alt="${product.name}" loading="lazy">
         <button class="add-btn">ADD +</button>
       </div>
     `;
