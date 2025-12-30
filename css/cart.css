@@ -67,3 +67,54 @@ body {
 .cart-footer h2{
   color:#fff
 }
+
+.place-order{
+  width:100%;
+  margin-top: 10px;
+  padding:12px;
+  background: #000;
+  color:#fff;
+  border:none;
+  font-size:1rem;
+  cursor :pointer;
+}
+
+/*Bill Modal*/
+
+.modal{
+  position: fixed;
+  top: 0;
+  left:0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.bill {
+  background: #fff;
+  color: #000;
+  width: 90%;
+  max-width: 400px;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.bill h2 {
+  text-align: center;
+}
+
+.bill-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 15px;
+}
+
+.bill-actions button {
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+}

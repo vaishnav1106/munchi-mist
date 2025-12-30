@@ -45,3 +45,7 @@ function changeQty(id, change) {
 }
 
 renderCart();
+
+
+// bill
+

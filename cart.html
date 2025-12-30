@@ -4,7 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Your Cart | Munchi Mist</title>
-
+  <link rel="stylesheet" href="css/products.css">
+  <link rel="icon" type="image/png" href="img/munchi mist.png">
   <link rel="stylesheet" href="css/cart.css">
 </head>
 <body>
@@ -13,11 +14,40 @@
     <h1>Your Cart</h1>
   </header>
 
+   <button class="back-btn"><a href="products.html">Back</a></button>
+
+
   <section class="cart-items" id="cartItems"></section>
 
-  <footer class="cart-footer">
-    <h2>Total: ₹<span id="totalAmount">0</span></h2>
-  </footer>
+  <!-- PLACE ORDER BUTTON -->
+<footer class="cart-footer">
+  <h2>Total: ₹<span id="totalAmount">0</span></h2>
+  <button id="placeOrderBtn" class="place-order">Place Order</button>
+</footer>
+
+<!-- BILL MODAL -->
+<div class="modal" id="billModal">
+  <div class="bill">
+    <h2>Munchi Mist</h2>
+    <hr>
+
+    <div id="billItems"></div>
+
+    <hr>
+    <p>Subtotal: ₹<span id="billSubtotal"></span></p>
+    <p>Tax (9%): ₹<span id="billTax"></span></p>
+    <p>Delivery Charge: ₹<span id="billDelivery"></span></p>
+
+    <h3>Total Payable: ₹<span id="billTotal"></span></h3>
+
+    <div class="bill-actions">
+      <button id="whatsappBtn">Send via WhatsApp</button>
+      <button id="emailBtn">Send via Email</button>
+      <button id="closeBill">Close</button>
+    </div>
+  </div>
+</div>
+
 
   <script src="js/cart.js"></script>
 </body>
