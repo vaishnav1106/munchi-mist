@@ -141,5 +141,5 @@ document.getElementById("payment").addEventListener("click",() =>{
 
   // Redirect to UPI app
   window.location.href = upiLink;
-  
+
 })
