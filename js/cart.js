@@ -91,13 +91,15 @@ document.getElementById("closeBill").onclick = () => {
 
 // whatsapp send order details
 
-document.getElementById("whatsappBtn").onclick = () => {
+document.getElementById("confirmBtn").onclick = () => {
   const ownerNumber = "917592819736"; // OWNER NUMBER
-  let message = "New Order for you Munchi Mist:%0A";
+  let message = "New Order for you Munchi Mist:%0A ";
 
   cart.forEach(item => {
-    message += `${item.name} × ${item.quantity}%0A`;
+    message += `${item.name} × ${item.quantity}%0A `;
   });
+
+   message += "%0A Go back to complete the payment.";
 
   window.open(
     `https://wa.me/${ownerNumber}?text=${message}`,
@@ -107,14 +109,37 @@ document.getElementById("whatsappBtn").onclick = () => {
 
 //email send order details
 
-document.getElementById("emailBtn").onclick = () => {
-  let body = "Order Details:%0A";
+// document.getElementById("confirmBtn").onclick = () => {
+//   let body = "Order Details:%0A";
 
-  cart.forEach(item => {
-    body += `${item.name} × ${item.quantity}%0A`;
-  });
+//   cart.forEach(item => {
+//     body += `${item.name} × ${item.quantity}%0A`;
+//   });
 
-  window.location.href =
-    `mailto:vaishnav8794@gmail.com?subject=New Order&body=${body}`;
-};
+//   window.location.href =
+//     `mailto:vaishnav8794@gmail.com?subject=New Order&body=${body}`;
+// };
 
+
+// Payment
+
+document.getElementById("payment").addEventListener("click",() =>{
+  const upiId = "vaishnavvnair123appu@okaxis"
+  const merchantName = "Munchi Mist"
+
+  //Get final payable amount from bill
+  const amount = document.getElementById("billTotal").textContent
+  if(!amount || amount <=0){
+    alert("Invalid Payment Amount")
+    return
+  }
+
+  // UPI deep link
+  const upiLink = `upi://pay?pa=${upiId}&pn=${encodeURIComponent(
+    merchantName
+  )}&am=${amount}&cu=INR`;
+
+  // Redirect to UPI app
+  window.location.href = upiLink;
+  
+})
