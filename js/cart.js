@@ -89,11 +89,11 @@ document.getElementById("closeBill").onclick = () => {
   billModal.style.display = "none"
 }
 
-// whatsapp send message
+// whatsapp send order details
 
 document.getElementById("whatsappBtn").onclick = () => {
   const ownerNumber = "917592819736"; // OWNER NUMBER
-  let message = "New Order from Munchi Mist:%0A";
+  let message = "New Order for you Munchi Mist:%0A";
 
   cart.forEach(item => {
     message += `${item.name} × ${item.quantity}%0A`;
@@ -103,5 +103,18 @@ document.getElementById("whatsappBtn").onclick = () => {
     `https://wa.me/${ownerNumber}?text=${message}`,
     "_blank"
   );
+};
+
+//email send order details
+
+document.getElementById("emailBtn").onclick = () => {
+  let body = "Order Details:%0A";
+
+  cart.forEach(item => {
+    body += `${item.name} × ${item.quantity}%0A`;
+  });
+
+  window.location.href =
+    `mailto:vaishnav8794@gmail.com?subject=New Order&body=${body}`;
 };
 
