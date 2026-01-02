@@ -3,7 +3,7 @@ const CACHE_NAME = "munchi-mist-v1";
 const ASSETS_TO_CACHE = [
   "/",
   "/index.html",
-  "/product.html",
+  "/products.html",
   "/cart.html",
   "/css/product.css",
   "/css/cart.css",
