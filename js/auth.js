@@ -1,106 +1,67 @@
-// ===============================
-// REGISTER PAGE LOGIC
-// ===============================
-
-// Select form
+// REGISTER
 const registerForm = document.getElementById("registerForm");
 
 if (registerForm) {
-  registerForm.addEventListener("submit", function (e) {
-    e.preventDefault(); // stop page refresh
+  registerForm.addEventListener("submit", e => {
+    e.preventDefault();
 
-    // Get input values
     const name = document.getElementById("name").value.trim();
     const email = document.getElementById("email").value.trim();
     const phone = document.getElementById("phone").value.trim();
     const password = document.getElementById("password").value.trim();
 
-    // Basic validation
     if (!name || !email || !phone || !password) {
       alert("Please fill all fields");
       return;
     }
 
-    if (!validateEmail(email)) {
-      alert("Please enter a valid email");
-      return;
-    }
+    localStorage.setItem(
+      "munchiUser",
+      JSON.stringify({ name, email, phone, password })
+    );
 
-    if (phone.length < 10 || phone.length > 10) {
-      alert("Please enter a valid mobile number");
-      return;
-    }
+    showToast("Sign up successful");
 
-
-    if (password.length < 6) {
-      alert("Password must be at least 6 characters");
-      return;
-    }
-
-    // Create user object
-    const user = {
-      name,
-      email,
-      phone,
-      password
-    };
-
-    // Save to localStorage
-    localStorage.setItem("munchiUser", JSON.stringify(user));
-
-    alert("Registration successful! Please login.");
-
-    // Redirect to login page
-    window.location.href = "login.html";
+    setTimeout(() => {
+      window.location.href = "login.html";
+    }, 2000);
   });
 }
 
-// Email validation function
-function validateEmail(email) {
-  const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  return regex.test(email);
-}
-
-
-
-// LOGIN PAGE LOGIC
-
+// LOGIN
 const loginForm = document.getElementById("loginForm");
 
 if (loginForm) {
-  loginForm.addEventListener("submit", function (e) {
+  loginForm.addEventListener("submit", e => {
     e.preventDefault();
 
-    const loginEmail = document.getElementById("loginEmail").value.trim();
-    const loginPassword = document.getElementById("loginPassword").value.trim();
+    const email = document.getElementById("loginEmail").value.trim();
+    const password = document.getElementById("loginPassword").value.trim();
 
-    if (!loginEmail || !loginPassword) {
-      alert("Please fill all fields");
-      return;
-    }
+    const user = JSON.parse(localStorage.getItem("munchiUser"));
 
-    // Get stored user
-    const storedUser = JSON.parse(localStorage.getItem("munchiUser"));
-
-    if (!storedUser) {
-      alert("No account found. Please register.");
-      return;
-    }
-
-    // Check credentials
-    if (
-      loginEmail === storedUser.email &&
-      loginPassword === storedUser.password
-    ) {
-      alert("Login successful!");
-
-      // Optional login flag
-      localStorage.setItem("isLoggedIn", "true");
-
-      // Redirect to products page
-      window.location.href = "products.html";
-    } else {
+    if (!user || email !== user.email || password !== user.password) {
       alert("Invalid email or password");
+      return;
     }
+
+    localStorage.setItem("isLoggedIn", "true");
+
+    showToast("Login successful");
+
+    setTimeout(() => {
+      window.location.href = "product.html";
+    }, 2000);
   });
+}
+
+
+function showToast(message, duration = 2500) {
+  const toast = document.getElementById("toast");
+  toast.textContent = message;
+  toast.classList.add("show");
+
+  setTimeout(() => {
+    toast.classList.remove("show");
+  }, duration);
 }

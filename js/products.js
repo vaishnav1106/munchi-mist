@@ -2,8 +2,8 @@ const productsContainer = document.getElementById("productsContainer");
 const categoryButtons = document.querySelectorAll(".categories button");
 
 let allProducts = [];
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-// Load products
 fetch("data/products.json")
   .then(res => res.json())
   .then(data => {
@@ -20,6 +20,9 @@ function displayProducts(category) {
       : allProducts.filter(p => p.category === category);
 
   filtered.forEach(product => {
+    const cartItem = cart.find(i => i.id === product.id);
+    const qty = cartItem ? cartItem.quantity : 0;
+
     const card = document.createElement("div");
     card.className = "product-card";
 
@@ -30,37 +33,52 @@ function displayProducts(category) {
       </div>
 
       <div class="product-action">
-        <img src="${product.image}" alt="${product.name}" loading="lazy">
-        <button class="add-btn">ADD +</button>
+        <img src="${product.image}" loading="lazy">
+
+        ${
+          qty === 0
+            ? `<button class="add-btn">ADD +</button>`
+            : `
+              <div class="qty-box">
+                <button class="qty-btn minus">−</button>
+                <span>${qty}</span>
+                <button class="qty-btn plus">+</button>
+              </div>
+            `
+        }
       </div>
     `;
 
-    card.querySelector(".add-btn").addEventListener("click", () => {
-      addToCart(product.id);
-    });
+    if (qty === 0) {
+      card.querySelector(".add-btn").onclick = () => {
+        updateCart(product, 1);
+        showToast("Added to cart");
+        displayProducts(category);
+      };
+    } else {
+      card.querySelector(".plus").onclick = () => {
+        updateCart(product, 1);
+        displayProducts(category);
+      };
+
+      card.querySelector(".minus").onclick = () => {
+        updateCart(product, -1);
+        displayProducts(category);
+      };
+    }
 
     productsContainer.appendChild(card);
   });
 }
 
-// Category filter
-categoryButtons.forEach(btn => {
-  btn.addEventListener("click", () => {
-    categoryButtons.forEach(b => b.classList.remove("active"));
-    btn.classList.add("active");
-    displayProducts(btn.dataset.category);
-  });
-});
+function updateCart(product, change) {
+  const item = cart.find(i => i.id === product.id);
 
-// Add to cart
-function addToCart(productId) {
-  let cart = JSON.parse(localStorage.getItem("cart")) || [];
-
-  const product = allProducts.find(p => p.id === productId);
-  const existing = cart.find(item => item.id === productId);
-
-  if (existing) {
-    existing.quantity += 1;
+  if (item) {
+    item.quantity += change;
+    if (item.quantity <= 0) {
+      cart = cart.filter(i => i.id !== product.id);
+    }
   } else {
     cart.push({
       id: product.id,
@@ -72,5 +90,23 @@ function addToCart(productId) {
   }
 
   localStorage.setItem("cart", JSON.stringify(cart));
-  alert(`${product.name} added to cart`);
+}
+
+categoryButtons.forEach(btn => {
+  btn.onclick = () => {
+    categoryButtons.forEach(b => b.classList.remove("active"));
+    btn.classList.add("active");
+    displayProducts(btn.dataset.category);
+  };
+});
+
+
+function showToast(message, duration = 2500) {
+  const toast = document.getElementById("toast");
+  toast.textContent = message;
+  toast.classList.add("show");
+
+  setTimeout(() => {
+    toast.classList.remove("show");
+  }, duration);
 }
