@@ -72,7 +72,7 @@ body{
 /* PRODUCT GRID */
 
 .products{
-    padding:20px;
+    padding:5px;
     display: grid;
     grid-template-columns: repeat(1fr);
     gap:20px;
@@ -118,6 +118,7 @@ body{
 .product-action{
     display: flex;
     justify-content: space-between;
+    gap:2px;
 }
 
 .product-card button{
@@ -134,19 +135,41 @@ body{
 .qty-box {
   display: flex;
   align-items: center;
-  gap: 8px;
   justify-content: center;
+  gap: 5px;
 }
 
 .qty-btn {
-  background: #000;
-  color: #fff;
-  border: none;
-  width: 28px;
-  height: 28px;
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
+  border: none;
+  background-color: #e53935;
+  color: #fff;
+
+  display: flex;              /* KEY FIX */
+  align-items: center;        /* vertical centering */
+  justify-content: center;    /* horizontal centering */
+
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1;             /* IMPORTANT */
+  padding: 0;                 /* IMPORTANT */
+
   cursor: pointer;
 }
+
+.qty-btn.minus {
+  background-color: #444;
+}
+
+.qty-box span {
+  min-width: 20px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 600;
+}
+
 
 .toast {
   position: fixed;

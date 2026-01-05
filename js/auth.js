@@ -1,4 +1,14 @@
-// REGISTER
+function showToast(message, duration = 2500) {
+  const toast = document.getElementById("toast");
+  toast.textContent = message;
+  toast.classList.add("show");
+
+  setTimeout(() => {
+    toast.classList.remove("show");
+  }, duration);
+}
+
+/* REGISTER */
 const registerForm = document.getElementById("registerForm");
 
 if (registerForm) {
@@ -11,7 +21,7 @@ if (registerForm) {
     const password = document.getElementById("password").value.trim();
 
     if (!name || !email || !phone || !password) {
-      alert("Please fill all fields");
+      showToast("Please fill all fields", 3000);
       return;
     }
 
@@ -28,7 +38,7 @@ if (registerForm) {
   });
 }
 
-// LOGIN
+/* LOGIN */
 const loginForm = document.getElementById("loginForm");
 
 if (loginForm) {
@@ -41,7 +51,7 @@ if (loginForm) {
     const user = JSON.parse(localStorage.getItem("munchiUser"));
 
     if (!user || email !== user.email || password !== user.password) {
-      alert("Invalid email or password");
+      showToast("Invalid email or password", 3000);
       return;
     }
 
@@ -50,18 +60,11 @@ if (loginForm) {
     showToast("Login successful");
 
     setTimeout(() => {
-      window.location.href = "product.html";
+      window.location.href = "products.html";
     }, 2000);
   });
 }
 
 
-function showToast(message, duration = 2500) {
-  const toast = document.getElementById("toast");
-  toast.textContent = message;
-  toast.classList.add("show");
 
-  setTimeout(() => {
-    toast.classList.remove("show");
-  }, duration);
-}
+lpohkjtotglghnbmo
