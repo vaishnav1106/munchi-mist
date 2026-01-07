@@ -1,18 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Menu | Munchi Mist</title>
 
-    <link rel="icon" type="image/png" href="img/munchi mist.png">
+  <link rel="icon" type="image/png" href="img/munchi mist.png">
   <link rel="stylesheet" href="css/products.css">
 </head>
+
 <body>
 
   <header class="product-header">
     <h1>🍽️ Menu</h1>
-    <a href="cart.html" class="cart-btn">Cart</a>
+    <a href="cart.html" class="cart-btn">
+      🛒 Cart <span id="cartCount">0</span>
+    </a>
   </header>
   <button class="back-btn"><a href="index.html">Back</a></button>
 
@@ -28,12 +32,13 @@
 
   <script src="js/products.js"></script>
   <script>
-  if ("serviceWorker" in navigator) {
-    navigator.serviceWorker
-      .register("service-worker.js")
-      .then(() => console.log("Service Worker Registered"));
-  }
-</script>
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker
+        .register("service-worker.js")
+        .then(() => console.log("Service Worker Registered"));
+    }
+  </script>
 
 </body>
+
 </html>
