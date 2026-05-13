@@ -64,7 +64,3 @@ if (loginForm) {
     }, 2000);
   });
 }
-
-
-
-lpohkjtotglghnbmo
